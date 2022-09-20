@@ -6,21 +6,22 @@ import { HiOutlineDocumentText } from 'react-icons/hi'
 const ADMIN = (navigate) => {
     return [
         {
-            label: 'Общая статистика',
+            label: 'Пользователи',
             key: 'submenu-1',
             icon: <BsPeople />,
-            children: [
-                {
-                    label: 'Cтатистика организаций',
-                    key: 'submenu-item-1-9',
-                    // onClick: () => navigate(ROUTES.ORG),
-                },
-                {
-                    label: 'Cтатистика курьеров',
-                    key: 'submenu-item-1-10',
-                    // onClick: () => navigate(ROUTES.COURIER),
-                },
-            ],
+            onClick: () => navigate(ROUTES.USERS),
+            // children: [
+            //     {
+            //         label: 'Cтатистика организаций',
+            //         key: 'submenu-item-1-9',
+            //         // onClick: () => navigate(ROUTES.ORG),
+            //     },
+            //     {
+            //         label: 'Cтатистика курьеров',
+            //         key: 'submenu-item-1-10',
+            //         // onClick: () => navigate(ROUTES.COURIER),
+            //     },
+            // ],
         },
         {
             label: 'Непринятые курьеры',
