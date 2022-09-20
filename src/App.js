@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import 'antd/dist/antd.min.css'
+import {
+    Login,
+    StatsOrg,
+    StatsCourier,
+    UnacceptedCouriers,
+    WorkingCouriers,
+    CityOrder,
+    CityOrg,
+} from './pages'
+import ROUTES from './routes'
+import Layout from './layout'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path={ROUTES.LOGIN} element={<Layout />}>
+                    <Route index element={<Login />} />
+                    {/* <Route element={<StatsOrg />} path={ROUTES.ORG} />
+                    <Route element={<StatsCourier />} path={ROUTES.COURIER} />
+                    <Route element={<UnacceptedCouriers />} path={ROUTES.UNACCEPTED_COURIERS} />
+                    <Route element={<WorkingCouriers />} path={ROUTES.WORKING_COURIERS} />
+                    <Route element={<CityOrder />} path={ROUTES.CITY_ORDER} />
+                    <Route element={<CityOrg />} path={ROUTES.CITY_ORG} /> */}
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App
