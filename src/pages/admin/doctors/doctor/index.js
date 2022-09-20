@@ -8,7 +8,7 @@ import 'moment/locale/ru'
 const { RangePicker } = DatePicker
 const { Option } = Select
 
-const Users = () => {
+const Doctors = () => {
     const [open, setOpen] = useState()
     const [dataChange, setDataChange] = useState()
     const [searchText, setSearchText] = useState('')
@@ -17,7 +17,7 @@ const Users = () => {
 
     const columns = [
         {
-            title: 'ФИО',
+            title: 'Организация',
             dataIndex: 'id',
             key: 'id',
             width: 80,
@@ -28,29 +28,14 @@ const Users = () => {
             ),
         },
         {
-            title: 'Пол',
+            title: 'Пользователь',
             dataIndex: 'organisation_name',
             key: 'organisation_name',
         },
         {
-            title: 'Почта',
+            title: 'Специализация',
             dataIndex: 'courier_name',
             key: 'courier_name',
-        },
-        {
-            title: 'Дата рождения',
-            dataIndex: 'courier_time',
-            key: 'courier_time',
-        },
-        {
-            title: 'Телефон',
-            dataIndex: 'last_order_status',
-            key: 'last_order_status',
-        },
-        {
-            title: 'Аватар',
-            dataIndex: 'last_order_status',
-            key: 'last_order_status',
         },
     ]
 
@@ -63,4 +48,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default Doctors
