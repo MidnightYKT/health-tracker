@@ -7,12 +7,19 @@ const ROUTES = {
     DOCTOR: '/doctor',
     DOCTOR_FILE: '/doctor_file',
     DOCTOR_PATIENTS: '/doctor_patients',
+
+    ORGANIZATION: '/organization',
+    EMPLOYEES: '/employees',
     PATIENTS: '/patients',
-    INFORMATION_CLINIC: '/information_clinic',
     SERVICES: '/services',
+
+    FORM: '/form',
+    QUESTIONS_FORM: '/questions_form',
+    RESULTS_FORM: '/results_form',
+
     SCREENINGS: '/screenings',
-    FORMS: '/forms',
-    MODULES: '/modules',
+    QUESTIONS_SCREENING: '/question_screening',
+    RESULTS_SCREENING: '/results_screening',
 }
 
 export default ROUTES

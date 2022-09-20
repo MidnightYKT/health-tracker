@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Typography } from 'antd'
+import { Layout, Typography, Breadcrumb } from 'antd'
 import { Outlet } from 'react-router-dom'
 
 import { pathname } from '../pathname'
@@ -12,6 +12,11 @@ const MainLayout = ({ params }) => {
     return (
         <Layout>
             <Content className="m-6">
+                <Breadcrumb className="mb-4 text-xl">
+                    <Breadcrumb.Item>Home</Breadcrumb.Item>
+                    <Breadcrumb.Item>List</Breadcrumb.Item>
+                    <Breadcrumb.Item>App</Breadcrumb.Item>
+                </Breadcrumb>
                 <div className="bg-white w-full pt-4 px-6">
                     {path !== '' ? (
                         <div className="mb-4">
