@@ -4,7 +4,7 @@ import { GiPlagueDoctorProfile } from 'react-icons/gi'
 import { HiOutlineDocumentText } from 'react-icons/hi'
 import { VscOrganization } from 'react-icons/vsc'
 import { AiOutlineForm, AiOutlineFundProjectionScreen } from 'react-icons/ai'
-// import breadCrumbs from 'use-react-router-breadcrumbs';
+import useBreadcrumbs from 'use-react-router-breadcrumbs'
 
 const ADMIN = (navigate) => {
     return [
@@ -12,7 +12,6 @@ const ADMIN = (navigate) => {
             label: 'Доктора',
             key: 'submenu-1',
             icon: <GiPlagueDoctorProfile />,
-            // breadCrumbs: 'Доктора',
             children: [
                 {
                     label: 'Доктор',

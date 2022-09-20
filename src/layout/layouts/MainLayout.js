@@ -1,6 +1,7 @@
 import React from 'react'
 import { Layout, Typography, Breadcrumb } from 'antd'
 import { Outlet } from 'react-router-dom'
+import useBreadcrumbs from 'use-react-router-breadcrumbs'
 
 import { pathname } from '../pathname'
 
@@ -9,13 +10,15 @@ const { Text } = Typography
 
 const MainLayout = ({ params }) => {
     const path = pathname(params)
+    const breadcrumbs = useBreadcrumbs()
+    console.log(breadcrumbs)
     return (
         <Layout>
             <Content className="m-6">
                 <Breadcrumb className="mb-4 text-xl">
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
+                    {breadcrumbs.map(({ breadcrumb }) => (
+                        <Breadcrumb.Item>{breadcrumb}</Breadcrumb.Item>
+                    ))}
                 </Breadcrumb>
                 <div className="bg-white w-full pt-4 px-6">
                     {path !== '' ? (

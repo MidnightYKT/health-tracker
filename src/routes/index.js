@@ -13,13 +13,13 @@ const ROUTES = {
     PATIENTS: '/patients',
     SERVICES: '/services',
 
-    FORM: '/form',
-    QUESTIONS_FORM: '/questions_form',
-    RESULTS_FORM: '/results_form',
+    FORM: '/organization/form',
+    QUESTIONS_FORM: '/organization/questions_form',
+    RESULTS_FORM: '/organization/results_form',
 
-    SCREENINGS: '/screenings',
-    QUESTIONS_SCREENING: '/question_screening',
-    RESULTS_SCREENING: '/results_screening',
+    SCREENINGS: '/organization/screenings',
+    QUESTIONS_SCREENING: '/organization/question_screening',
+    RESULTS_SCREENING: '/organization/results_screening',
 }
 
 export default ROUTES

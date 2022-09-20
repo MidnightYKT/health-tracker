@@ -1,4 +1,5 @@
 import ROUTES from '../routes'
+import useBreadcrumbs from 'use-react-router-breadcrumbs'
 
 export const pathname = (params) => {
     switch (params.pathname) {
