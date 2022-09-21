@@ -16,6 +16,7 @@ import {
     Screening,
     QuestionsScreen,
     ResultsScreen,
+    LoginPass,
 } from './pages'
 import ROUTES from './routes'
 import Layout from './layout'
@@ -26,6 +27,7 @@ function App() {
             <Routes>
                 <Route path={ROUTES.LOGIN} element={<Layout />}>
                     <Route index element={<Login />} />
+                    <Route element={<LoginPass />} path={ROUTES.LOGINPASS} />
                     <Route element={<Users />} path={ROUTES.USERS} />
                     <Route element={<Doctor />} path={ROUTES.DOCTOR} />
                     <Route element={<DoctorFile />} path={ROUTES.DOCTOR_FILE} />

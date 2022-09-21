@@ -15,20 +15,20 @@ const MainLayout = ({ params }) => {
     return (
         <Layout>
             <Content className="m-6">
-                <Breadcrumb className="mb-4 text-xl">
+                <Breadcrumb className="mb-3 text-xl">
                     {breadcrumbs.map(({ breadcrumb }) => (
                         <Breadcrumb.Item>{breadcrumb}</Breadcrumb.Item>
                     ))}
                 </Breadcrumb>
-                <div className="bg-white w-full pt-4 px-6">
-                    {path !== '' ? (
+                <div className="bg-white w-full">
+                    {/* {path !== '' ? (
                         <div className="mb-4">
                             <Text className="text-2xl">{path}</Text>
                             <div className="bg-black h-0.5 -mx-6 mt-4"></div>
                         </div>
                     ) : (
                         <></>
-                    )}
+                    )} */}
                     <Outlet />
                 </div>
             </Content>

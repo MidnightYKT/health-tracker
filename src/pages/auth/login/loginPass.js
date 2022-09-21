@@ -10,21 +10,22 @@ import LoginModal from './components/modal/LoginModal'
 
 const { Text } = Typography
 
-const Login = () => {
+const LoginPass = () => {
     const navigate = useNavigate()
+    const [open, setOpen] = useState()
 
     const [postLoginEmail] = useLoginEmailMutation()
 
     const onFinish = (values) => {
         postLoginEmail({
             email: values.email,
+            password: values.password,
         }).then((res) => {
             if (res?.error) {
                 message.error(res?.error?.data?.errors[0])
             } else {
                 cookie.set('jwttoken', res.data.token)
-                // window.location.href = ROUTES.LOGINPASS
-                navigate(ROUTES.LOGINPASS)
+                navigate(ROUTES.USERS)
             }
         })
     }
@@ -32,7 +33,7 @@ const Login = () => {
     return (
         <div>
             <div className="background_style">
-                <div className="form h-64">
+                <div className="form h-96">
                     <Text
                         style={{
                             fontWeight: 400,
@@ -58,7 +59,26 @@ const Login = () => {
                                 style={{
                                     borderRadius: 4,
                                 }}
-                                placeholder="Введите ваш Email"
+                                placeholder="Логин"
+                                size="large"
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={<Text style={{ fontWeight: 600, fontSize: 16 }}>Пароль</Text>}
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Введите ваш Пароль',
+                                },
+                            ]}
+                            labelCol={{ span: 24 }}
+                        >
+                            <Input
+                                style={{
+                                    borderRadius: 4,
+                                }}
+                                placeholder="Логин"
                                 size="large"
                             />
                         </Form.Item>
@@ -76,28 +96,15 @@ const Login = () => {
                             Войти
                         </Button>
                         <Link
-                            to={ROUTES.LOGINPASS}
+                            to={ROUTES.LOGIN}
                             style={{
                                 marginTop: 12,
-                                float: 'left',
+                                float: 'right',
                                 marginBottom: 24,
                             }}
                         >
-                            Имеется пароль?
+                            Забыли пароль?
                         </Link>
-                        {/* <Button
-                            style={{
-                                background: '#09304A',
-                                width: '100%',
-                                borderRadius: 4,
-                                color: 'white',
-                            }}
-                            htmlType="submit"
-                            size="large"
-                            onClick={() => navigate(ROUTES.REGISTRATION)}
-                        >
-                            Зарегистрироваться
-                        </Button> */}
                     </Form>
                 </div>
             </div>
@@ -105,4 +112,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LoginPass

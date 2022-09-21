@@ -3,7 +3,7 @@ import cookie from 'js-cookie'
 
 const baseQuery = fetchBaseQuery({
     baseUrl: process.env.REACT_APP_API_KEY,
-    prepareHeaders: (headers, { getState }) => {
+    prepareHeaders: (headers) => {
         const token = cookie.get('jwttoken')
         if (token) {
             headers.set('authorization', `Token ${token}`)
@@ -17,7 +17,7 @@ export const api = createApi({
 
     baseQuery: baseQuery,
 
-    tagTypes: ['Courier', 'Organisations', 'Orders'],
+    // tagTypes: ['Courier', 'Organisations', 'Orders'],
 
     endpoints: () => ({}),
 })

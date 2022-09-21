@@ -14,7 +14,7 @@ const MyLayout = () => {
 
     return (
         <>
-            {params.pathname == ROUTES.LOGIN ? (
+            {params.pathname == ROUTES.LOGIN || params.pathname == ROUTES.LOGINPASS ? (
                 <div>
                     <Outlet />
                 </div>

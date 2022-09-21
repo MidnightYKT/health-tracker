@@ -2,6 +2,15 @@ import { api } from './api'
 
 export const login = api.injectEndpoints({
     endpoints: (build) => ({
+        loginEmail: build.mutation({
+            query(body) {
+                return {
+                    url: `users/get_password`,
+                    method: 'POST',
+                    body,
+                }
+            },
+        }),
         login: build.mutation({
             query(body) {
                 return {
@@ -23,4 +32,4 @@ export const login = api.injectEndpoints({
     }),
 })
 
-export const { useLoginMutation, useRegisterMutation } = login
+export const { useLoginEmailMutation, useLoginMutation, useRegisterMutation } = login

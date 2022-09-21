@@ -13,6 +13,7 @@ import ResultsForm from './admin/organizations/forms/results-form'
 import Screening from './admin/organizations/screenings/screening'
 import QuestionsScreen from './admin/organizations/screenings/questions-screening'
 import ResultsScreen from './admin/organizations/screenings/results-screening'
+import LoginPass from './auth/login/loginPass'
 
 export {
     Login,
@@ -30,4 +31,5 @@ export {
     Screening,
     QuestionsScreen,
     ResultsScreen,
+    LoginPass,
 }
